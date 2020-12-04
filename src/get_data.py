@@ -12,19 +12,16 @@ def get_data(year, day):
 
     url = "https://adventofcode.com/{year}/day/{day}/input".format(year=year, day=day)
 
-    fp = "../data/{year}/day{day}.txt".format(year=year, day=str(day).zfill(2))
+    fn = "{year}/day{day}.txt".format(year=year, day=str(day).zfill(2))
+    fp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data', fn))
     if os.path.exists(fp):
-        with open(fp, "r") as f:
-            data = f.read()
+        data = open(fp, "r").read()
     else:
-        dirname = os.path.dirname(fp)
-        os.makedirs(dirname, exist_ok=True)
-
         response = requests.get(url=url, cookies={"session": session})
         response.raise_for_status()
-        data = response.text
 
-        with open(fp, "w") as f:
-            f.write(data)
+        os.makedirs(os.path.dirname(fp), exist_ok=True)
+        data = response.text
+        open(fp, "w").write(data)
 
     return data.rstrip("\r\n")
