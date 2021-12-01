@@ -17,7 +17,7 @@ def get_data(year, day):
     if os.path.exists(fp):
         data = open(fp, "r").read()
     else:
-        response = requests.get(url=url, cookies={"session": session})
+        response = requests.get(url=url, cookies={"session": session}, verify=False)
         response.raise_for_status()
 
         os.makedirs(os.path.dirname(fp), exist_ok=True)
