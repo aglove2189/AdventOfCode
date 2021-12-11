@@ -12,7 +12,7 @@ while True:
     data += 1
     flashing = np.where((data > 9) & (data < 420))
     while len(flashing[0]) > 0:
-        coords = list(zip(flashing[0], flashing[1]))
+        coords = list(zip(*flashing))
         for x, y in coords:
             data[
                 max(0, x - 1):min(x + 2, data.shape[0]),
