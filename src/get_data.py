@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 import os
+import urllib3
 import requests
 from config import session
+
+urllib3.disable_warnings()
 
 
 def get_data(year, day):
@@ -9,10 +12,9 @@ def get_data(year, day):
     Get data for day (1-25) and year (>= 2015)
     User's session cookie is needed (puzzle inputs differ by user)
     """
+    url = f"https://adventofcode.com/{year}/day/{day}/input"
 
-    url = "https://adventofcode.com/{year}/day/{day}/input".format(year=year, day=day)
-
-    fn = "{year}/day{day}.txt".format(year=year, day=str(day).zfill(2))
+    fn = f"{year}/day{day:02}.txt"
     fp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data', fn))
     if os.path.exists(fp):
         data = open(fp, "r").read()
