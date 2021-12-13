@@ -1,24 +1,17 @@
 import os
-import click
-
+import sys
 
 template = '''# -*- coding: utf-8 -*-
 from get_data import get_data\n
 
-data = get_data({yr}, {day})\n'''
-
-
-@click.command()
-@click.option('--year', '-yr', multiple=True)
-def build_templates(year):
-    for yr in year:
-        os.makedirs(yr, exist_ok=True)
-        for day in range(1, 26):
-            fn = f'{yr}/day{str(day).zfill(2)}.py'
-            if not os.path.exists(fn):
-                with open(fn, 'w') as f:
-                    f.write(template.format(yr=yr, day=day))
+data = get_data({year}, {day})\n'''
 
 
 if __name__ == '__main__':
-    build_templates()
+    year = sys.argv[1]
+    os.makedirs(year, exist_ok=True)
+    for day in range(1, 26):
+        fn = f'{year}/day{day:02}.py'
+        if not os.path.exists(fn):
+            with open(fn, 'w') as f:
+                f.write(template.format(year=year, day=day))
