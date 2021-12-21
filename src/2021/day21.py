@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from get_data import get_data
 import itertools
-from dataclasses import dataclass
 
 print(get_data(2021, 21))
 
@@ -16,10 +15,10 @@ class Die:
         return sum(next(self.generator) for _ in range(3))
 
 
-@dataclass
 class Player:
-    position: int
-    score: int
+    def __init__(self, position, score):
+        self.position = position
+        self.score = score
 
     def move(self, roll):
         self.position = (self.position + roll) % 10
