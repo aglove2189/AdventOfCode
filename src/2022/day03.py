@@ -14,6 +14,6 @@ print(part1)
 
 part2 = 0
 for i in range(0, len(data), 3):
-    (letter,) = set.intersection(*map(set, data[i:i + 3]))
+    (letter,) = set.intersection(*map(set, data[i : i + 3]))
     part2 += ascii_letters.find(letter) + 1
 print(part2)

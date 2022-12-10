@@ -17,7 +17,7 @@ for r in data.split():
         trip += 1
 print(dub * trip)
 
-for f,s in itertools.permutations(data.split(), 2):
+for f, s in itertools.permutations(data.split(), 2):
     if edit_distance(f, s) == 1:
         print(f, s)
         break

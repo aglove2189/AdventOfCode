@@ -10,7 +10,8 @@ def is_valid(passphrase):
     passphrase = passphrase.split()
     return len(passphrase) == len(set(passphrase))
 
-print(sum([is_valid(p) for p in data.strip().split('\n')]))
+
+print(sum([is_valid(p) for p in data.strip().split("\n")]))
 
 
 def is_valid2(passphrase):
@@ -18,4 +19,5 @@ def is_valid2(passphrase):
     passphrase2 = set([tuple(sorted(Counter(p).items())) for p in passphrase])
     return len(passphrase) == len(passphrase2)
 
-print(sum([is_valid2(p) for p in data.strip().split('\n')]))
+
+print(sum([is_valid2(p) for p in data.strip().split("\n")]))

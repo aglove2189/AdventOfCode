@@ -2,7 +2,7 @@
 from get_data import get_data
 
 data = get_data(2021, 8).splitlines()
-data = [d.split(' | ') for d in data]
+data = [d.split(" | ") for d in data]
 
 part1 = []
 for _, output in data:

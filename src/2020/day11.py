@@ -15,7 +15,7 @@ def next_grid(grid):
             adjacent = []
             for i, j in deltas:
                 if 0 <= row + i < len(grid) and 0 <= col + j < len(grid[0]):
-                    adjacent.append(grid[row+i][col+j])
+                    adjacent.append(grid[row + i][col + j])
             if grid[row][col] == "L" and "#" not in adjacent:
                 new_grid[row][col] = "#"
             if grid[row][col] == "#" and adjacent.count("#") >= 4:
@@ -30,8 +30,8 @@ def next_grid2(grid):
             adjacent = []
             for i, j in deltas:
                 step = 1
-                while 0 <= row+step*i < len(grid) and 0 <= col+step*j < len(grid[0]):
-                    changes = grid[row+step*i][col+step*j]
+                while 0 <= row + step * i < len(grid) and 0 <= col + step * j < len(grid[0]):
+                    changes = grid[row + step * i][col + step * j]
                     if changes != ".":
                         adjacent.append(changes)
                         break

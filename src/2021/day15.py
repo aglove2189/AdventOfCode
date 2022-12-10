@@ -13,8 +13,8 @@ def find_path(data):
     n = len(data)
     G = nx.grid_2d_graph(n, n, create_using=nx.DiGraph())
     for i, j in G.edges:
-        G[i][j]['weight'] = data[j[1]][j[0]]
-    return nx.shortest_path_length(G, source=(0, 0), target=(n - 1, n - 1), weight='weight')
+        G[i][j]["weight"] = data[j[1]][j[0]]
+    return nx.shortest_path_length(G, source=(0, 0), target=(n - 1, n - 1), weight="weight")
 
 
 print(find_path(data))

@@ -7,9 +7,9 @@ data = get_data(2020, 5)
 def find(space, range_=range(127)):
     for c in space:
         if c in ("B", "R"):
-            range_ = range_[len(range_)//2::]
+            range_ = range_[len(range_) // 2 : :]
         else:
-            range_ = range_[0:len(range_)//2]
+            range_ = range_[0 : len(range_) // 2]
     try:
         return range_[0] + 1
     except IndexError:

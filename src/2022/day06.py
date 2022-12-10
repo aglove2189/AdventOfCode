@@ -6,7 +6,7 @@ data = get_data(2022, 6)
 
 def solve(n=4):
     for i in range(n, len(data)):
-        if len(set(data[i-n:i])) == n:
+        if len(set(data[i - n : i])) == n:
             return i
 
 

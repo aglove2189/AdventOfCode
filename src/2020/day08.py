@@ -4,7 +4,7 @@ from copy import deepcopy
 from get_data import get_data
 
 data = get_data(2020, 8).splitlines()
-instr = [d.split(' ') for d in data]
+instr = [d.split(" ") for d in data]
 
 
 def run(instr, part1=True):
@@ -13,12 +13,12 @@ def run(instr, part1=True):
     seen = []
     while True:
         d = instr[pos]
-        if 'acc' in d:
+        if "acc" in d:
             acc += int(d[1])
             pos += 1
-        elif 'nop' in d:
+        elif "nop" in d:
             pos += 1
-        elif 'jmp' in d:
+        elif "jmp" in d:
             pos += int(d[1])
         if pos in seen:
             if part1:
@@ -33,10 +33,10 @@ print(run(instr))
 
 for i in range(len(instr)):
     instr_ = deepcopy(instr)
-    if 'jmp' in instr_[i]:
-        instr_[i][0] = 'nop'
-    elif 'nop' in instr_[i]:
-        instr_[i][0] = 'jmp'
+    if "jmp" in instr_[i]:
+        instr_[i][0] = "nop"
+    elif "nop" in instr_[i]:
+        instr_[i][0] = "jmp"
     else:
         continue
     result = run(instr_, part1=False)

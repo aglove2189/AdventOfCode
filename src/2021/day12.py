@@ -7,13 +7,13 @@ data = get_data(2021, 12).splitlines()
 
 C = defaultdict(list)
 for d in data:
-    a, b = d.split('-')
+    a, b = d.split("-")
     C[a].append(b)
     C[b].append(a)
 
 
 def get_paths(cave="start", seen=set()):
-    if cave == 'end':
+    if cave == "end":
         return 1
     if cave.islower() and cave in seen:
         return 0
@@ -25,9 +25,9 @@ def get_paths(cave="start", seen=set()):
 
 
 def get_paths2(cave="start", seen=set(), twice=None):
-    if cave == 'end':
+    if cave == "end":
         return 1
-    if cave == 'start' and seen:
+    if cave == "start" and seen:
         return 0
     if cave.islower() and cave in seen:
         if twice is None:

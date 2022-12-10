@@ -13,8 +13,7 @@ while True:
     while len(flashing[0]) > 0:
         for x, y in list(zip(*flashing)):
             data[
-                max(0, x - 1):min(x + 2, data.shape[0]),
-                max(0, y - 1):min(y + 2, data.shape[1])
+                max(0, x - 1) : min(x + 2, data.shape[0]), max(0, y - 1) : min(y + 2, data.shape[1])
             ] += 1
             data[x, y] += 420
             part1 += 1 if part2 <= 100 else 0

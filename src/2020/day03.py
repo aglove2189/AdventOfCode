@@ -9,7 +9,7 @@ def count_trees(data, right=3, down=1):
     pos = 1
     for i in range(0, len(data), down):
         d = data[i]
-        trees += d[pos-1] == '#'
+        trees += d[pos - 1] == "#"
         pos += right
         if pos > len(d):
             pos -= len(d)
@@ -18,9 +18,9 @@ def count_trees(data, right=3, down=1):
 
 print(count_trees(data))
 print(
-      count_trees(data, 1, 1)
-      * count_trees(data, 3, 1)
-      * count_trees(data, 5, 1)
-      * count_trees(data, 7, 1)
-      * count_trees(data, 1, 2)
+    count_trees(data, 1, 1)
+    * count_trees(data, 3, 1)
+    * count_trees(data, 5, 1)
+    * count_trees(data, 7, 1)
+    * count_trees(data, 1, 2)
 )

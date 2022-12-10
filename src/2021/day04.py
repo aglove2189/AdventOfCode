@@ -3,8 +3,8 @@ from get_data import get_data
 
 data = get_data(2021, 4)
 
-nums, *boards = data.split('\n\n')
-nums = list(map(int, nums.split(',')))
+nums, *boards = data.split("\n\n")
+nums = list(map(int, nums.split(",")))
 boards = [[list(map(int, row.split())) for row in b.splitlines()] for b in boards]
 
 

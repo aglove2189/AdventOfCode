@@ -12,9 +12,9 @@ def overlap(data, include_diagonal=False):
         x1, y1 = list(map(int, one.split(",")))
         x2, y2 = list(map(int, two.split(",")))
         if x1 == x2:
-            diagram[x1, min(y1, y2):max(y1, y2) + 1] += 1
+            diagram[x1, min(y1, y2) : max(y1, y2) + 1] += 1
         elif y1 == y2:
-            diagram[min(x1, x2):max(x1, x2) + 1, y1] += 1
+            diagram[min(x1, x2) : max(x1, x2) + 1, y1] += 1
         elif include_diagonal:
             xpoints = np.arange(x1, x2 + np.sign(x2 - x1), np.sign(x2 - x1))
             ypoints = np.arange(y1, y2 + np.sign(y2 - y1), np.sign(y2 - y1))

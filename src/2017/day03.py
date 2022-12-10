@@ -4,6 +4,7 @@ from get_data import get_data
 
 data = get_data(2017, 3)
 
+
 def pos(num):
     direction = -1
     count = 1
@@ -23,6 +24,7 @@ def pos(num):
                 return x, y
         direction *= -1
         count += 1
+
 
 x, y = pos(eval(data))
 

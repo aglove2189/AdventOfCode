@@ -25,10 +25,10 @@ def solve(stacks, part1=True):
         a, b, c = map(int, re.findall(r"\d+", i))
         if part1:
             for _ in range(a):
-                stacks_c[c-1].append(stacks_c[b-1].pop())
+                stacks_c[c - 1].append(stacks_c[b - 1].pop())
         else:
-            stacks_c[c-1] += stacks_c[b-1][-a:]
-            stacks_c[b-1] = stacks_c[b-1][:-a]
+            stacks_c[c - 1] += stacks_c[b - 1][-a:]
+            stacks_c[b - 1] = stacks_c[b - 1][:-a]
     return "".join(i[-1] for i in stacks_c)
 
 
