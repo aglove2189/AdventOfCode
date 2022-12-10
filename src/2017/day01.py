@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from get_data import get_data
 
-
 data = get_data(2017, 1)
 
 captcha = list(map(int, str(data)))

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import re
+
 import numpy as np
 from get_data import get_data
-
 
 data = get_data(2018, 3)
 

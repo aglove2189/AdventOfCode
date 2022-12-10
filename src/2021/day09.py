@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Solutions were largely written by Github Copilot
-from get_data import get_data
 import numpy as np
+from get_data import get_data
 
 data = get_data(2021, 9).splitlines()
 data = [[int(y) for y in x] for x in data]

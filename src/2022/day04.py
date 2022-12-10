@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-from get_data import get_data
 import re
+
+from get_data import get_data
 
 data = get_data(2022, 4).split("\n")
 

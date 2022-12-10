@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from get_data import get_data
 from itertools import combinations
 
+from get_data import get_data
 
 data = list(map(int, get_data(2020, 9).splitlines()))
 

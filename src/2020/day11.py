@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-import itertools
 import copy
-from get_data import get_data
+import itertools
 
+from get_data import get_data
 
 data = get_data(2020, 11)
 deltas = [[1, 0], [-1, 0], [0, -1], [0, 1], [1, 1], [-1, -1], [1, -1], [-1, 1]]

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from get_data import get_data
-import re
 import copy
+import re
 
+from get_data import get_data
 
 stacks, instructions = data = get_data(2022, 5).split("\n\n")
 

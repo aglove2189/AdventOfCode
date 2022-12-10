@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
-from get_data import get_data
 import numpy as np
+from get_data import get_data
 from scipy.ndimage import convolve
-
 
 algo, _, *image = get_data(2021, 20).splitlines()
 algo = np.array([int(p == "#") for p in algo])

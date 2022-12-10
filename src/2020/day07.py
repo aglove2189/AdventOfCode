@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from get_data import get_data
-
-from collections import defaultdict
 import re
+from collections import defaultdict
+
+from get_data import get_data
 
 data = get_data(2020, 7).splitlines()
 

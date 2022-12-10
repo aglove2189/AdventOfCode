@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from get_data import get_data
 from copy import deepcopy
 
+from get_data import get_data
 
 data = get_data(2020, 8).splitlines()
 instr = [d.split(' ') for d in data]

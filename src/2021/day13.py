@@ -2,7 +2,6 @@
 from get_data import get_data
 from parse import findall
 
-
 data = get_data(2021, 13)
 dots = findall("{:d},{:d}", data)
 folds = findall("{:l}={:d}", data)

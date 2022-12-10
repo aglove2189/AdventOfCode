@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re
-from get_data import get_data
 
+from get_data import get_data
 
 data = get_data(2015, 5)
 

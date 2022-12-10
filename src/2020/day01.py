@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 import operator
-from itertools import combinations
 from functools import reduce
+from itertools import combinations
 
 from get_data import get_data
-
 
 data = get_data(2020, 1)
 data = list(map(int, data.split()))

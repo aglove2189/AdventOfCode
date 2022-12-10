@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 import itertools
 from collections import Counter
-from nltk.metrics import edit_distance
 
 from get_data import get_data
-
+from nltk.metrics import edit_distance
 
 data = get_data(2018, 2)
 

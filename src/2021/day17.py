@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from get_data import get_data
 
-
 print(get_data(2021, 17))
 x1, x2, y1, y2 = 201, 230, -99, -65
 print(y1 * (y1 + 1) // 2)

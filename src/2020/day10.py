@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from get_data import get_data
 import pandas as pd
+from get_data import get_data
 
 data = sorted(list(map(int, get_data(2020, 10).splitlines())))
 data.insert(0, 0)

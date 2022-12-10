@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-from get_data import get_data
 from itertools import product
-import numpy as np
-import networkx as nx
 
+import networkx as nx
+import numpy as np
+from get_data import get_data
 
 data = get_data(2021, 15).splitlines()
 data = [[int(y) for y in x] for x in data]

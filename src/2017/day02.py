@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
-from get_data import get_data
-
-import itertools
 import io
-import pandas as pd
+import itertools
 
+import pandas as pd
+from get_data import get_data
 
 data = get_data(2017, 2)
 

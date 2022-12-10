@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from get_data import get_data
 from collections import Counter
 
+from get_data import get_data
 
 data = get_data(2020, 6).split('\n\n')
 

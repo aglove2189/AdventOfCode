@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from get_data import get_data
 
-
 data = get_data(2021, 8).splitlines()
 data = [d.split(' | ') for d in data]
 

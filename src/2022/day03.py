@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-from get_data import get_data
 from string import ascii_letters
+
+from get_data import get_data
 
 data = get_data(2022, 3).split("\n")
 

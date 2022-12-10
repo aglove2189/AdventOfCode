@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-import math
 import itertools
-from get_data import get_data
+import math
 
+from get_data import get_data
 
 timestamp, bus_ids = get_data(2020, 13).splitlines()
 bus_ids = bus_ids.split(',')
