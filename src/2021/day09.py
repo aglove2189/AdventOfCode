@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Solutions were largely written by Github Copilot
 import numpy as np
 from get_data import get_data

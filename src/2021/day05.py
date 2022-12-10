@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import numpy as np
 from get_data import get_data
 

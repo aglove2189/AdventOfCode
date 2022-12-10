@@ -1,7 +1,5 @@
-# -*- coding: utf-8 -*-
-from get_data import get_data
 import numpy as np
-
+from get_data import get_data
 
 data = np.array([[int(i) for i in d] for d in get_data(2022, 8).splitlines()])
 

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from get_data import get_data
 
 data = get_data(2015, 2)

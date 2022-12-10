@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from get_data import get_data
 
 data = list(map(int, get_data(2020, 15).split(",")))

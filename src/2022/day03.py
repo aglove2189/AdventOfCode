@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from string import ascii_letters
 
 from get_data import get_data

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from collections import Counter
 
 from get_data import get_data
