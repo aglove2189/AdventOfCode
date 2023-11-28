@@ -1,4 +1,3 @@
-import numpy as np
 from get_data import get_data
 
 data = get_data(2017, 3)

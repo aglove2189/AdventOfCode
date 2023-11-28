@@ -1,6 +1,5 @@
 import collections
 
-import dateutil
 from get_data import get_data
 
 data = get_data(2018, 4)

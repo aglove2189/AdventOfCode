@@ -15,7 +15,7 @@ def get_data(year, day):
     url = f"https://adventofcode.com/{year}/day/{day}/input"
 
     fn = f"{year}/day{day:02}.txt"
-    fp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data', fn))
+    fp = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data", fn))
     if os.path.exists(fp):
         data = open(fp, "r").read()
     else:
