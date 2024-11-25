@@ -14,3 +14,8 @@ dependencies = [
 [tool.ruff]
 line-length = 100
 lint.ignore = ["E741"]
+
+[dependency-groups]
+dev = [
+    "jupyter>=1.1.1",
+]
