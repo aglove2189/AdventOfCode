@@ -1,4 +1,5 @@
-init:
-	python -m venv venv && venv/bin/pip install -r requirements.txt
-	venv/bin/pre-commit install
-	echo 'PYTHONPATH=src' > .env
+lint:
+	uv run ruff check . --fix --exit-non-zero-on-fix
+
+format:
+	uv run ruff format .
