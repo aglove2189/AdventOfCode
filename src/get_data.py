@@ -1,11 +1,7 @@
-# -*- coding: utf-8 -*-
 import os
-import urllib3
-import requests
-from config import session
+import urllib.request
 
-urllib3.disable_warnings()
-
+AOC_SESSION = os.environ["AOC_SESSION"]
 
 def get_data(year, day):
     """
@@ -19,11 +15,13 @@ def get_data(year, day):
     if os.path.exists(fp):
         data = open(fp, "r").read()
     else:
-        response = requests.get(url=url, cookies={"session": session}, verify=False)
-        response.raise_for_status()
+        req = urllib.request.Request(url)
+        req.add_header("Cookie", f"session={AOC_SESSION}")
+
+        with urllib.request.urlopen(req) as response:
+            data = response.read().decode("utf8")
 
         os.makedirs(os.path.dirname(fp), exist_ok=True)
-        data = response.text
         open(fp, "w").write(data)
 
     return data.rstrip("\r\n")
