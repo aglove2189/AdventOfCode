@@ -1,7 +1,9 @@
 import os
 import urllib.request
+import argparse
 
 AOC_SESSION = os.environ["AOC_SESSION"]
+
 
 def get_data(year, day):
     """
@@ -25,3 +27,16 @@ def get_data(year, day):
         open(fp, "w").write(data)
 
     return data.rstrip("\r\n")
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Get data for Advent of Code.")
+    parser.add_argument("year", type=int, help="The year of the puzzle.")
+    parser.add_argument("day", type=int, help="The day of the puzzle.")
+    args = parser.parse_args()
+
+    get_data(args.year, args.day)
+
+
+if __name__ == "__main__":
+    main()
