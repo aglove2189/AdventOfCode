@@ -17,8 +17,7 @@ print(part1)
 
 merged_ranges = []
 curr_start, curr_end = ranges[0]
-for i in range(1, len(ranges)):
-    next_start, next_end = ranges[i]
+for next_start, next_end in ranges[1:]:
     if next_start <= curr_end + 1:
         curr_end = max(curr_end, next_end)
     else:
@@ -26,5 +25,5 @@ for i in range(1, len(ranges)):
         curr_start, curr_end = next_start, next_end
 merged_ranges.append((curr_start, curr_end))
 
-part2 = sum(end - start for start, end in merged_ranges) + len(merged_ranges)
+part2 = sum(end - start + 1 for start, end in merged_ranges)
 print(part2)
