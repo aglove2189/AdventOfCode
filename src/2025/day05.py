@@ -9,16 +9,10 @@ ranges.sort()
 
 part1 = 0
 for i in ids:
-    is_fresh = False
     for start, end in ranges:
         if start <= i <= end:
-            is_fresh = True
+            part1 += 1
             break
-        if start > i:
-            break
-    if is_fresh:
-        part1 += 1
-
 print(part1)
 
 merged_ranges = []
