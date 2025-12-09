@@ -13,17 +13,13 @@ for i in range(len(points)):
         x1, y1 = points[i]
         x2, y2 = points[j]
 
-        minx, maxx = min(x1, x2), max(x1, x2)
-        miny, maxy = min(y1, y2), max(y1, y2)
+        area = (abs(x1 - x2) + 1) * (abs(y1 - y2) + 1)
+        part1 = max(area, part1)
 
-        area = (maxx - minx + 1) * (maxy - miny + 1)
-
-        if area > part1:
-            part1 = area
-
-        rect = box(minx, miny, maxx, maxy)
-        if area > part2 and poly.covers(rect):
-            part2 = area
+        if area > part2:
+            rect = box(min(x1, x2), min(y1, y2), max(x1, x2), max(y1, y2))
+            if poly.covers(rect):
+                part2 = area
 
 print(part1)
 print(part2)
