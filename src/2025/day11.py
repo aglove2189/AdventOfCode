@@ -1,31 +1,16 @@
 from functools import cache
 from get_data import get_data
 
+
+@cache
+def solve(node, t="out"):
+    return 1 if node == t else sum(solve(n, t) for n in dag.get(node, []))
+
+
 data = get_data(2025, 11).splitlines()
+dag = {k: v.split() for d in data for k, v in [d.split(": ")]}
 
-dag = {}
-for d in data:
-    node, targets = d.split(": ")
-    dag[node] = targets.split()
-
-
-@cache
-def count_paths(node):
-    if node == "out":
-        return 1
-    return sum(count_paths(n) for n in dag[node])
-
-
-@cache
-def count_paths2(node, seen_dac=False, seen_fft=False):
-    if node == "dac":
-        seen_dac = True
-    if node == "fft":
-        seen_fft = True
-    if node == "out":
-        return 1 if seen_dac and seen_fft else 0
-    return sum(count_paths2(n, seen_dac, seen_fft) for n in dag[node])
-
-
-print(count_paths("you"))
-print(count_paths2("svr"))
+print(solve("you"))
+route1 = solve("svr", "dac") * solve("dac", "fft") * solve("fft", "out")
+route2 = solve("svr", "fft") * solve("fft", "dac") * solve("dac", "out")
+print(route1 + route2)
