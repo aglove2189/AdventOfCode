@@ -39,18 +39,22 @@ def submit(year, day, part, answer):
     with urllib.request.urlopen(req, data=data) as response:
         response_text = response.read().decode("utf-8")
         match = re.search(r"<article>(.*?)<a href", response_text)
-        message = re.sub(r"<[^>]+>", "", match.group(1)).strip()
-        print(message)
-
-        if "left to wait" in message:
-            countdown(message)
+        if match:
+            message = re.sub(r"<[^>]+>", "", match.group(1)).strip()
+            print(message)
+            if "left to wait" in message:
+                countdown(message)
+        else:
+            print("⭐🎄⭐")
 
 
 def main():
     parser = argparse.ArgumentParser(description="Submit an answer for Advent of Code.")
     parser.add_argument("year", type=int, help="The year of the puzzle.")
     parser.add_argument("day", type=int, help="The day of the puzzle.")
-    parser.add_argument("part", type=int, choices=[1, 2], help="The part of the puzzle (1 or 2).")
+    parser.add_argument(
+        "part", type=int, choices=[1, 2], help="The part of the puzzle (1 or 2)."
+    )
     parser.add_argument("answer", help="Your answer to the puzzle.")
     args = parser.parse_args()
 
